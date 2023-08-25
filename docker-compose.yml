@@ -1,0 +1,15 @@
+version: '3'
+services:
+  express-app:
+    build: ./blog
+    ports:
+      - "4000:4000"
+    depends_on:
+      - postgres-db
+
+  postgres-db:
+    build: ./postgres
+    environment:
+      POSTGRES_DB: dbname1
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: hessam123
